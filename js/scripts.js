@@ -1,3 +1,6 @@
+function clearInput() {
+    $('#input').val('');
+}
 
 function newItem() {
 
@@ -26,5 +29,11 @@ function newItem() {
     crossOutButton.on("click", deleteListItem);
 
     $('#list').sortable();
-
+    clearInput();
 }
+
+$('form').submit(function (e) {
+    e.preventDefault();
+    newItem();
+    clearInput();
+});
